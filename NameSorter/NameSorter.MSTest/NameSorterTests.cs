@@ -27,8 +27,6 @@ namespace NameSorter.MSTest
              .AddLogging();
 
             servicesProvider = services.BuildServiceProvider();
-
-            ProjectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
         }
 
         /// <summary>
@@ -39,24 +37,26 @@ namespace NameSorter.MSTest
         public void TestSortName()
         {
             //Arrange
-            string ExpectedResults = @"Marin Alvarez
-                                    Adonis Julius Archer
-                                    Beau Tristan Bentley
-                                    Hunter Uriah Mathew Clarke
-                                    Leo Gardner
-                                    Vaughn Lewis
-                                    London Lindsey
-                                    Mikayla Lopez
-                                    Janet Parsons
-                                    Frankie Conner Ritter
-                                    Shelby Nathan Yoder";
+            string ExpectedResults =
+                @"Marin Alvarez" + Environment.NewLine +
+                "Adonis Julius Archer" + Environment.NewLine +
+                "Beau Tristan Bentley" + Environment.NewLine +
+                "Hunter Uriah Mathew Clarke" + Environment.NewLine +
+                "Leo Gardner" + Environment.NewLine +
+                "Vaughn Lewis" + Environment.NewLine +
+                "London Lindsey" + Environment.NewLine +
+                "Mikayla Lopez" + Environment.NewLine +
+                "Janet Parsons" + Environment.NewLine +
+                "Frankie Conner Ritter" + Environment.NewLine +
+                "Shelby Nathan Yoder" + Environment.NewLine +
+                "";
 
             //Act
             var SortName = servicesProvider.GetService<ISortName>();
-            var SortedString = SortName.SortNamesByLastNameThenGivenName(ProjectPath + @"\unsorted-names-list.txt", ProjectPath + @"\sorted-names-list.txt", ".txt");
+            var SortedString = SortName.SortNamesByLastNameThenGivenName(@"Files\unsorted-names-list.txt", @"Files\sorted-names-list.txt", ".txt");
 
             //Assert            
-            Assert.AreNotEqual(ExpectedResults, SortedString, "SortName failde!");
+            Assert.AreEqual(ExpectedResults, SortedString, "SortName failde!");
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace NameSorter.MSTest
 
             //Act
             var ReadFiles = servicesProvider.GetService<IFileServices>();
-            var Results = ReadFiles.ReadFile(ProjectPath + @"\unsorted-names-list.txt");
+            var Results = ReadFiles.ReadFile( @"Files\unsorted-names-list.txt");
 
             //Assert
             CollectionAssert.AreEqual(ExpectedResults, Results, "Read File Failed");
