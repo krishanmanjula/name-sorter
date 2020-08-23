@@ -42,8 +42,8 @@ namespace NameSorter
                 .GetService<ILoggerFactory>()
                 .AddConsole(LogLevel.Debug);
 
-            string UnsortedNamesPath = @"C:\File\unsorted-names-list.txt";
-            string SortedNamesPath = @"C:\File\sorted-names-list.txt";
+            string UnsortedNamesPath = @"Files\unsorted-names-list.txt";
+            string SortedNamesPath = @"Files\sorted-names-list.txt";
             string FileFormat = ".txt";
 
             // Calling SortNamesByLastNameThenGivenName.
@@ -52,17 +52,7 @@ namespace NameSorter
 
             // Print the results to screen.
             Console.WriteLine(SortedString);
+            Console.ReadKey();
         }
-    }
-
-
-    class student
-    {
-        public student(string fname, string lname)
-        {
-            this.firstName = fname; this.lastName = lname;
-        }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
     }
 }

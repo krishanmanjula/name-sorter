@@ -22,7 +22,7 @@ namespace NameSorter.Logic
         }
 
         /// <summary>
-        /// Sorts the name of the names by last name then given.
+        /// Sorts the names by last name then given and return as string.
         /// </summary>
         /// <param name="FilePath">The file path.</param>
         /// <param name="OutPutPath">The out put path.</param>
