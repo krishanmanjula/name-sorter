@@ -1,1 +1,2 @@
-# name-sorter
+# Project Title
+Name Sorter
