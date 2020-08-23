@@ -1,7 +1,16 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
 /NameSorter/NameSorter/obj
 /NameSorter/.vs/NameSorter/v15
 /.vs
+NameSorter/.vs/
+NameSorter/NameSorter.MSTest/bin/
+NameSorter/NameSorterTest/obj/
+NameSorter/packages/MSTest.TestAdapter.1.3.2/build/
+NameSorter/packages/MSTest.TestFramework.1.3.2/lib/
+NameSorter/NameSorterTest/bin/
+NameSorter/NameSorter.Test/obj/
+NameSorter/NameSorter/bin/
+NameSorter/NameSorter.MSTest/obj/
